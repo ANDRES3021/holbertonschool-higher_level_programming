@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 def no_c(my_string):
-    str_2 = ""
+    str_new = ""
     for i in my_string:
-        if i is not 'c' and i is not 'C':
-            str_2 += i
-    return (str_2)
+        if i != 'c' and i != 'C':
+            str_new += i
+    return (str_new)
