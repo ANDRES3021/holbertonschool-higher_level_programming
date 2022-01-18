@@ -3,4 +3,5 @@
 
 
 class Square:
+    """pass is Null declaration"""
     pass
