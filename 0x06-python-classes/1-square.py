@@ -2,7 +2,7 @@
 """class keyword to define the class"""
 
 
-class Square:
+class Square():
     """init method that receives the initialization parameters"""
     def __init__(self, size):
         """Expression to initialize our class"""
