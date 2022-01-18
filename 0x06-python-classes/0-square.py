@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-#empy class 
+"""empy class"""
+
 
 class Square:
     pass
