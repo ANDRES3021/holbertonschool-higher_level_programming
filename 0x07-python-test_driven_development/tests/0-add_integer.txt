@@ -1,0 +1,84 @@
+::::::::::::
+Funcion
+::::::::::::
+txt to test possible error cases in add integer()
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+module import
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Test cases
+::::::::::::
+
+1 - Should return the sum of two integers a = 23 + b = 0
+
+>>> add_integer(23, 0)
+23
+
+2 - Should return the sum of two integers a = 0 + b = 23
+
+>>> add_integer(0, 23)
+23
+
+3 - Should return the sum of two integers a = -4 + b = 4
+>>> add_integer(-4, 4)
+0
+
+4 - Should return the sum of two integers a = 4 + b = -4
+>>> add_integer(4, -4)
+0
+
+5 - Should return the sum of two integers a = 0 + b = 0
+>>> add_integer(0, 0)
+0
+
+6 - Should generate an exception for an infinite number
+
+>>> add_integer(float('inf'), 19)
+Traceback (most recent call last):
+
+7 - Should generate a TypeError exception for an empty function
+
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+8 - Should generate a TypeError exception for a = 'a' and b = 'b'
+
+>>> add_integer('a', 'b')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+9 - Should generate a TypeError exception for a = 'a'
+
+>>> add_integer('a', 31)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+10 - Should generate a TypeError exception for a = 'a'
+
+>>> add_integer('a')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+11 - Should generate a TypeError exception for b = 'b'
+
+>>> add_integer(31, 'b')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+12 - Should generate a TypeError exception for b = 'Apple'
+
+>>> add_integer(0, float('Apple'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+13 - Should generate an exception for more than two arguments
+
+>>> add_integer(100, 2, 42)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
