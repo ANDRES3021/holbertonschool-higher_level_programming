@@ -58,3 +58,7 @@ class Rectangle:
         for index in range(self.__height):
             rect.append(size)
         return "\n".join(rect)
+
+    def __repr__(self):
+        """returns representation of the Rectangle"""
+        return "Rectangle ({:d}, {:d})".format(self.__width, self.__height)
