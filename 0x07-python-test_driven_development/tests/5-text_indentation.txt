@@ -1,0 +1,147 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+1 - Test all delimeter with spaces at ends
+
+>>> text_indentation("text   :    identation    ?    exercise.    test     ")
+text:
+<BLANKLINE>
+indentation?
+<BLANKLINE>
+exercise.
+<BLANKLINE>
+test
+
+2 - Test just delimeter
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+3- Test string with the spaces
+
+>>> text_indentation("    identation")
+identation
+
+4 - Test just delimeters
+
+>>> text_indentation("  ?  ")
+?
+<BLANKLINE>
+
+5 - Test nonindent inside indent
+
+>>> text_indentation("?Andres.")
+?
+<BLANKLINE>
+Andres.
+<BLANKLINE>
+
+6 - Test existing newline
+
+>>> text_indentation("?\n\n.\n\n:")
+?
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+
+7 - Test none
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+8 - Test num
+
+>>> text_indentation(33)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+9 - Test string with some spaces
+
+>>> text_indentation("        boring          ")
+boring
+
+10 - Test string with an empty string
+
+>>> text_indentation("")
+
+11 - Test string with an empty string (2)
+
+>>> text_indentation("      ")
+
+12 - Test
+
+>>> text_indentation("Andres: Pardo")
+Andres:
+<BLANKLINE>
+Pardo
+
+13 - Test delimeters with spaces
+
+>>> text_indentation("      ?:  :  ")
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+
+14 - Test newline
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+15 - Test newlines
+
+>>> text_indentation("\n\n")
+<BLANKLINE>
+<BLANKLINE>
+
+16 - Test newline 3
+
+>>> text_indentation("boring\n\n")
+boring
+<BLANKLINE>
+Import module:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+17 - Test no delimeters
+
+>>> text_indentation("Norwegian wood")
+Norwegian wood
+
+18 - Test string with spaces:
+>>> text_indentation("beatles    ")
+beatles
+
+19 - Test all delimeters!:
+>>> text_indentation("Blackbird: singing?  learn. fly")
+Blackbird:
+<BLANKLINE>
+singing?
+<BLANKLINE>
+learn.
+<BLANKLINE>
+fly
+
+20 - Test all delimeters with some spaces:
+>>> text_indentation("Blackbird   :   singing  ?  learn.  fly")
+Blackbird:
+<BLANKLINE>
+singing?
+<BLANKLINE>
+learn.
+<BLANKLINE>
+fly
