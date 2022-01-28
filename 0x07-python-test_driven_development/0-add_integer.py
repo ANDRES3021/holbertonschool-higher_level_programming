@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""Modulus for addition"""
+
+
 def add_integer(a, b=98):
+    """Function that adds two integers and
+         which checks if it is integer or float
+         """
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError('a must be an integer')
     if not isinstance(b, int) and not isinstance(b, float):

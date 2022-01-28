@@ -38,6 +38,8 @@ Test cases
 
 >>> add_integer(float('inf'), 19)
 Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
 
 7 - Should generate a TypeError exception for an empty function
 
@@ -74,7 +76,7 @@ TypeError: b must be an integer
 >>> add_integer(0, float('Apple'))
 Traceback (most recent call last):
 ...
-ValueError: cannot convert float NaN to integer
+ValueError: cannot convert float Apple to integer
 
 13 - Should generate an exception for more than two arguments
 
