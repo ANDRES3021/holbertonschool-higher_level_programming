@@ -17,7 +17,7 @@ Test 0:
 Test 1:
 
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("name", "Andres")
+    >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
         ...
     TypeError: name must be an integer
@@ -33,7 +33,7 @@ Test 2:
 Test 3:
 
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("distance", -9)
+    >>> bg.integer_validator("distance", -4)
     Traceback (most recent call last):
         ...
     ValueError: distance must be greater than 0
@@ -41,7 +41,7 @@ Test 3:
 Test 4:
 
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("distance", -9, 30)
+    >>> bg.integer_validator("distance", -4, 45)
     Traceback (most recent call last):
         ...
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
