@@ -101,7 +101,7 @@ class Rectangle(Base):
             args (list): attributes to be modified [id, width, height, x, y].
             kwargs (dict): attributes to be modified.
         """
-        if args:
+        if args is not None and len(args) != 0:
             if len(args) >= 1:
                 self.id = args[0]
 
