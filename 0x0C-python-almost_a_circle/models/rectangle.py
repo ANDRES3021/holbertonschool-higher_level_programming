@@ -97,9 +97,6 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Updates the Rectangle attributes.
-        Args:
-            args (list): attributes to be modified [id, width, height, x, y].
-            kwargs (dict): attributes to be modified.
         """
         if args is not None and len(args) != 0:
             if len(args) >= 1:
