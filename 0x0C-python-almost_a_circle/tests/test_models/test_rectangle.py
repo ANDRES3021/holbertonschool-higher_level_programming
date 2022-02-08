@@ -204,7 +204,7 @@ class Test_Rectangle(unittest.TestCase):
         dict = r5.to_dictionary()
         self.assertEqual(
             r5.to_json_string(dict),
-            '{"width": 10, "height": 7, "x": 2, "y": 8, "id": 17}',
+            '{"id": 17, "width": 10, "height": 7, "x": 2, "y": 8}',
         )
         """call the methode without parametres"""
         self.assertRaises(TypeError, r5.to_json_string)

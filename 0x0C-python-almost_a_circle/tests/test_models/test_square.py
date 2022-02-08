@@ -68,7 +68,7 @@ class Test_Rectangle(unittest.TestCase):
         Check return function
         """
         r2 = Square(2, 10)
-        self.assertEqual(r2.id, 45)
+        self.assertEqual(r2.id, 35)
 
     def test_id3n(self):
         """
@@ -189,7 +189,7 @@ class Test_Rectangle(unittest.TestCase):
         r5 = Square(10, 7, 2, 17)
         dict = r5.to_dictionary()
         self.assertEqual(
-            r5.to_json_string(dict), '{"size": 10, "x": 7, "y": 2, "id": 17}'
+            r5.to_json_string(dict), '{"id": 17, "x": 7, "size": 10, "y": 2}'
         )
         """call the methode without parametres"""
         self.assertRaises(TypeError, r5.to_json_string)
