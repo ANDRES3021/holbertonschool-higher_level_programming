@@ -4,6 +4,7 @@ Contains the Base class which will be the
 “base” of all other classes in this project.
 """
 import json
+import csv
 
 
 class Base():
@@ -85,5 +86,39 @@ class Base():
                 for lis in list_dicci:
                     lists_1.append(cls.create(**lis))
                 return lists_1
+        except Exception:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """create file .csv"""
+        line = []
+        with open(cls.__name__ + ".csv", "w") as my_file:
+            if list_objs is None or len(list_objs) <= 0:
+                my_file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    line = ["id", "width", "height", "x", "y"]
+                if cls.__name__ == "Square":
+                    line = ["id", "size", "x", "y"]
+            var = csv.DictWriter(my_file, fieldnames=line)
+            for iter in list_objs:
+                var.writerow(iter.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """read the function"""
+        try:
+            with open(cls.__name__ + ".csv", "r") as my_file:
+                if cls.__name__ == "Rectangle":
+                    line = ["id", "width", "height", "x", "y"]
+                if cls.__name__ == "Square":
+                    line = ["id", "size", "x", "y"]
+                read_file = csv.DictReader(my_file, fieldnames=line)
+                dict_ni = [
+                    dict([clave, int(valor)] for clave, valor in iter.items())
+                    for iter in read_file
+                ]
+                return [cls.create(**dict_l) for dict_l in dict_ni]
         except Exception:
             return []
