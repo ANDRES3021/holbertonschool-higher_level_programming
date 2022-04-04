@@ -1,9 +1,6 @@
 #!/usr/bin/node
-if (process.argv[2] === undefined)
-{
+if (process.argv[2] === undefined) {
     console.log('No argumen');
-}
-else
-{
+} else {
     console.log(process.argv[2]);
 }
