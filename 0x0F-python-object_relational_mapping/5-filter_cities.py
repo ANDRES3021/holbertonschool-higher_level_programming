@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """script that takes in the name of a state
-as an argument and lists all cities of that state, using the database hbtn_0e_4_usa"""
+as an argument and lists all cities of that
+state, using the database hbtn_0e_4_usa"""
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
@@ -17,4 +18,3 @@ if __name__ == "__main__":
     print(", ".join([cities[0] for cities in cur.fetchall()]))
     cur.close()
     db.close()
-    
