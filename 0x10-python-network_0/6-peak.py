@@ -7,6 +7,5 @@ def find_peak(list_of_integers):
     if len(list_of_integers) < 1:
         return None
 
-    conjunto = set(list_of_integers)
-    maximo = max(conjunto)
-    return maximo
+    list_of_integers.sort()
+    return list_of_integers[-1]
